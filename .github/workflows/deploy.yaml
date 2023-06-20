@@ -1,0 +1,27 @@
+name: Deploy Teste Para Produção
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploy Teste Para Produção
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+
+      - name: Installing Dependencies
+        run: npm ci
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Building deployment artifact
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          folder: build
+          clean: true
+```
