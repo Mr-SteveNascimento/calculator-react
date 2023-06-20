@@ -5,12 +5,14 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
     name: Deploy Teste Para Produção
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         name: Checkout
 
       - name: Installing Dependencies
