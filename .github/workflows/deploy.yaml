@@ -19,8 +19,8 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Building deployment artifact
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           folder: build
           clean: true
